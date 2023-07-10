@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste do índice de massa corporal</title>
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/font-awesome.min.css">
+    <link rel="stylesheet" href="src/css/estilo.css">
+</head>
+<body>
+    <main id="painel-principal">
+        <section id="sessao-imc">
+            <header id="cabecalho">
+                <h1 class="titulos">Cálculo IMC</h1>
+                
+                <p>O Índice de massa corporal é representado pela sigla IMC, que foi adotada como parâmetro pela OMS (organização mundial de saúde) para calcular o peso ideal de cada pessoa.</p>
+        
+                <p>A seguir preencha os campos com sua altura e peso para ver o resultado do cálculo do seu IMC. Temos também uma tabela onde você pode acompanhar o valor, classificação e grau de cada um dos possíveis resultados.</p>
+            </header>
+
+            <h2 class="titulos">Informe sua altura e peso, e veja seu IMC</h2>
+            <div id="altura-peso">
+                <div><i class="fas fa-ruler-combined icons"></i> <input id="altura" class="inputs" type="number" name="altura" step="any" placeholder="Altura em cm"></div>
+                <div><i class="fas fa-balance-scale icons"></i> <input id="peso" class="inputs" type="number" name="peso" placeholder="Peso em Kg"></div>
+            </div>
+
+            <br>
+
+            <div id="confirmar-ou-limpar">
+                <input id="botao-calcular" class="botoes" type="submit" value="Calcular IMC">
+                <input id="botao-limpar-dados" class="botoes" type="reset" value="Limpar dados">
+            </div>
+        </section>
+
+        <section id="painel-da-tabela">
+            <div id="tabela-imc">
+                <h2 class="titulos">Tabela de interpretação do IMC</h2>
+                    <table>
+                        <tr>
+                            <th>IMC</th>
+                            <th>Classificação</th>
+                            <th>Obesidade (Grau)</th>
+                        </tr>
+                        <tr>
+                            <td>MENOR QUE 18,5</td>
+                            <td>DESNUTRIDO</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>ENTRE 18,5 E 24,9</td>
+                            <td>NORMAL</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>ENTRE 25,0 E 29,9</td>
+                            <td>SOBREPESO</td>
+                            <td>I</td>
+                        </tr>
+                        <tr>
+                            <td>ENTRE 30,0 E 39,9</td>
+                            <td>OBESIDADE</td>
+                            <td>II</td>
+                        </tr>
+                        <tr>
+                            <td>MAIOR QUE 40,0</td>
+                            <td>OBESIDADE GRAVE</td>
+                            <td>III</td>
+                        </tr>
+                    </table>
+            </div>
+
+            <div id="resultado-do-imc">
+                <div id="imagem"><img src="src/imagens/medico.png" alt=""></div>
+                <div id="texto-resultado">
+                    <p>- Que tal calcularmos o seu índice de massa corporal?</p>
+                    <br>
+                    <p>- Preencha os campos ao lado e depois click no botão para ver o resultado do seu IMC.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="src/js/interacao-imc.js"></script>
+</body>
+</html>

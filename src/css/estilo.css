@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.titulos {
+    color: rgb(0, 0, 124);
+}
+
+#cabecalho {
+    max-width: 700px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+#cabecalho h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+#cabecalho p {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: justify;
+}
+
+#painel-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#sessao-imc {
+    background-color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#altura-peso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.icons {
+    width: 20px;
+    font-size: 20px;
+}
+
+
+#sessao-imc .inputs {
+    max-width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+}
+
+.botoes {
+    width: 150px;
+    height: 50px;
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    margin: 10px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#botao-calcular {
+    background-color: rgb(1, 1, 154);
+}
+
+#botao-calcular:hover {
+    background-color: rgb(3, 50, 190);
+}
+
+#botao-limpar-dados {
+    background-color: rgb(208, 57, 2);
+}
+
+#botao-limpar-dados:hover {
+    background-color: rgb(249, 86, 27);
+}
+
+#painel-da-tabela {
+    background-color: rgb(210, 226, 245);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tabela-imc h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#tabela-imc table {
+    background-color: #fff;
+    color: rgb(12, 3, 139);
+    border-radius: 10px;
+    padding: 10px;
+    border: solid black 1px;
+    margin-top: 30px;
+}
+
+table td {
+    padding: 5px;
+    font-weight: 700;
+    text-align: center;
+    border: solid black 1px;
+}
+
+#resultado-do-imc {
+    display: flex;
+    border: solid 1px rgb(0, 57, 0);
+    border-radius: 10px;
+    width: 550px;
+    height: 215px;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+
+#resultado-do-imc #texto-resultado {
+    text-align: justify;
+    width: 300px;
+    margin-left: 20px;
+}
+
+#resultado-do-imc p {
+    margin-top: 10px;
+}
+
+#texto-resultado.animacao {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}

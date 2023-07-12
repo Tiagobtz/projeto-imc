@@ -14,8 +14,18 @@
         align-items: center;
     }
 
+    #sessao-imc {
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .botoes {
+        width: 100px;
+        font-size: 10px;
+    }
+
     #confirmar-ou-limpar {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     #painel-da-tabela {

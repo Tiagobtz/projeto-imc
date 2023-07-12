@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/font-awesome.min.css">
     <link rel="stylesheet" href="src/css/estilo.css">
+    <link rel="stylesheet" href="src/css/responsivo-1080px.css">
+    <link rel="stylesheet" href="src/css/responsivo-675px.css">
 </head>
 <body>
     <main id="painel-principal">
@@ -19,7 +21,7 @@
                 <p>A seguir preencha os campos com sua altura e peso para ver o resultado do cálculo do seu IMC. Temos também uma tabela onde você pode acompanhar o valor, classificação e grau de cada um dos possíveis resultados.</p>
             </header>
 
-            <h2 class="titulos">Informe sua altura e peso, e veja seu IMC</h2>
+            <h2 class="titulos subtitulos">Informe sua altura e peso, e veja seu IMC</h2>
             <div id="altura-peso">
                 <div><i class="fas fa-ruler-combined icons"></i> <input id="altura" class="inputs" type="number" name="altura" step="any" placeholder="Altura em cm"></div>
                 <div><i class="fas fa-balance-scale icons"></i> <input id="peso" class="inputs" type="number" name="peso" placeholder="Peso em Kg"></div>
@@ -34,8 +36,17 @@
         </section>
 
         <section id="painel-da-tabela">
+            <div id="resultado-do-imc">
+                <div id="imagem"><img src="src/imagens/medico.png" alt=""></div>
+                <div id="texto-resultado">
+                    <p>- Que tal calcularmos o seu índice de massa corporal?</p>
+                    <br>
+                    <p>- Preencha os campos ao lado e depois click no botão para ver o resultado do seu IMC.</p>
+                </div>
+            </div>
+
+            <h2 class="titulos subtitulos">Tabela de interpretação do IMC</h2>
             <div id="tabela-imc">
-                <h2 class="titulos">Tabela de interpretação do IMC</h2>
                     <table>
                         <tr>
                             <th>IMC</th>
@@ -68,15 +79,6 @@
                             <td>III</td>
                         </tr>
                     </table>
-            </div>
-
-            <div id="resultado-do-imc">
-                <div id="imagem"><img src="src/imagens/medico.png" alt=""></div>
-                <div id="texto-resultado">
-                    <p>- Que tal calcularmos o seu índice de massa corporal?</p>
-                    <br>
-                    <p>- Preencha os campos ao lado e depois click no botão para ver o resultado do seu IMC.</p>
-                </div>
             </div>
         </section>
     </main>

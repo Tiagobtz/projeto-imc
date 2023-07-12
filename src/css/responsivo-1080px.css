@@ -1,0 +1,36 @@
+@media (max-width: 1080px){
+    #cabecalho h1{
+        font-size: 1.5rem;
+    }
+    
+    #cabecalho p {
+        font-size: 0.7rem;
+    }
+    
+    #sessao-imc h2 {
+        font-size: 1rem;
+    }
+
+    #altura-peso {
+        margin-top: 10px;
+    }
+
+    #confirmar-ou-limpar {
+        display: flex;
+    }
+    
+    table {
+        width: 280px;
+        font-size: 8px;
+    }
+
+    #resultado-do-imc {
+        width: 320px;
+    }
+
+    #resultado-do-imc #texto-resultado {
+        font-size: 10px;
+        margin-left: 0;
+        margin-right: 20px;
+    }
+}

@@ -1,0 +1,32 @@
+@media (max-width: 675px) {
+    #cabecalho p {
+        font-size: 0.5rem;
+    }
+
+    .subtitulos {
+        font-size: 1rem;
+    }
+    
+    #painel-principal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #confirmar-ou-limpar {
+        flex-direction: column;
+    }
+
+    #painel-da-tabela {
+        background-color: #fff;
+    }
+
+    #painel-da-tabela h2 {
+        margin-top: 10px;
+    }
+
+    #resultado-do-imc {
+        margin-bottom: 50px;
+    }
+}

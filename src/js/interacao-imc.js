@@ -17,23 +17,35 @@ botaoCalcular.addEventListener("click", function(){
         peso = parseFloat(peso.value)
         let imc = peso / (altura * altura )
 
+        textoResultado.style.marginTop = "60px"
+
         if (imc < 18.5){
+            textoResultado.style.color = "red"
             textoResultado.classList.add("animacao")
-            textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está DESNUTRIDO`
+            textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está ABAIXO DO PESO`
         }
         else if (imc >= 18.5 && imc <= 24.9){
+            textoResultado.style.color = "green"
             textoResultado.classList.add("animacao")
             textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com seu peso NORMAL`
         }
         else if (imc >= 25 && imc <= 29.9){
+            textoResultado.style.color = "red"
             textoResultado.classList.add("animacao")
             textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com SOBREPESO`
         }
-        else if (imc >= 30 && imc <= 39.9){
+        else if (imc >= 30 && imc <= 34.9){
+            textoResultado.style.color = "red"
             textoResultado.classList.add("animacao")
-            textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE`
+            textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE DE PRIMEIRO GRAU`
+        }
+        else if (imc >= 35 && imc <= 39.9){
+            textoResultado.style.color = "red"
+            textoResultado.classList.add("animacao")
+            textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE DE SEGUNDO GRAU`
         }
         else if (imc > 40){
+            textoResultado.style.color = "red"
             textoResultado.classList.add("animacao")
             textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE GRAVE`
         }

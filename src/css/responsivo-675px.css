@@ -39,4 +39,10 @@
     #resultado-do-imc {
         margin-bottom: 50px;
     }
+
+    #texto-resultado.animacao {
+        animation: fadeInAnimation ease 5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
 }

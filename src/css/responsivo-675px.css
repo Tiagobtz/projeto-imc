@@ -1,6 +1,6 @@
 @media (max-width: 675px) {
     #cabecalho p {
-        font-size: 0.5rem;
+        font-size: 0.8rem;
     }
 
     .subtitulos {
@@ -19,6 +19,10 @@
         margin-bottom: 20px;
     }
 
+    #sessao-imc h2 {
+        font-size: 0.8rem;
+    }
+
     .botoes {
         width: 100px;
         font-size: 10px;
@@ -34,6 +38,7 @@
 
     #painel-da-tabela h2 {
         margin-top: 10px;
+        font-size: 0.8rem;
     }
 
     #resultado-do-imc {

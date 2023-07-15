@@ -7,52 +7,52 @@ let textoResultado = document.getElementById("texto-resultado")
 let botaoCalcular = document.getElementById('botao-calcular')
 let botaoLimparDados = document.getElementById("botao-limpar-dados")
 
-botaoCalcular.addEventListener("click", function(){
-    if (altura.value.length == 0 || peso.value.length == 0){
-        alert("[ERRO] Você deve preencher os campos para poder prosseguir")
-    } else {
-        
-        altura = parseFloat(altura.value)
-        altura /= 100
-        peso = parseFloat(peso.value)
-        let imc = peso / (altura * altura )
+function calcularImc(){
+        if (altura.value.length == '' || peso.value.length == ''){
+            alert("[ERRO] Você deve preencher os campos para poder prosseguir")
+        } else {
+            altura = Number(altura.value)
+            peso = Number(peso.value)
 
-        textoResultado.style.marginTop = "60px"
-
+            let imc = peso / (altura * altura )
+    
+            textoResultado.style.marginTop = "60px"
+    
         if (imc < 18.5){
-            textoResultado.style.color = "red"
-            textoResultado.classList.add("animacao")
-            textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está ABAIXO DO PESO`
+                textoResultado.style.color = "red"
+                textoResultado.classList.add("animacao")
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está ABAIXO DO PESO`
         }
         else if (imc >= 18.5 && imc <= 24.9){
-            textoResultado.style.color = "green"
-            textoResultado.classList.add("animacao")
-            textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com seu peso NORMAL`
+                textoResultado.style.color = "green"
+                textoResultado.classList.add("animacao")
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com seu peso NORMAL`
         }
         else if (imc >= 25 && imc <= 29.9){
-            textoResultado.style.color = "red"
-            textoResultado.classList.add("animacao")
-            textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com SOBREPESO`
+                textoResultado.style.color = "red"
+                textoResultado.classList.add("animacao")
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com SOBREPESO`
         }
         else if (imc >= 30 && imc <= 34.9){
-            textoResultado.style.color = "red"
-            textoResultado.classList.add("animacao")
-            textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE DE PRIMEIRO GRAU`
+                textoResultado.style.color = "red"
+                textoResultado.classList.add("animacao")
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE DE PRIMEIRO GRAU`
         }
         else if (imc >= 35 && imc <= 39.9){
-            textoResultado.style.color = "red"
-            textoResultado.classList.add("animacao")
-            textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE DE SEGUNDO GRAU`
+                textoResultado.style.color = "red"
+                textoResultado.classList.add("animacao")
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE DE SEGUNDO GRAU`
         }
         else if (imc > 40){
-            textoResultado.style.color = "red"
-            textoResultado.classList.add("animacao")
-            textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE GRAVE`
+                textoResultado.style.color = "red"
+                textoResultado.classList.add("animacao")
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE GRAVE`
         }
     }
-})
+}
 
-botaoLimparDados.addEventListener("click", function(){
-    altura.value = ''
-    peso.value = ''
-})
+
+function limparDados() {
+    document.getElementById("altura").value = ""
+    document.getElementById("peso").value = ""
+  }

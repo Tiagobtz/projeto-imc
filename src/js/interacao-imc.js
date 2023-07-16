@@ -8,7 +8,7 @@ let botaoCalcular = document.getElementById('botao-calcular')
 let botaoLimparDados = document.getElementById("botao-limpar-dados")
 
 function calcularImc(){
-        if (altura.value.length == '' || peso.value.length == ''){
+        if (altura.value == '' || peso.value == ''){
             alert("[ERRO] Você deve preencher os campos para poder prosseguir")
         } else {
             altura = Number(altura.value)
@@ -55,4 +55,4 @@ function calcularImc(){
 function limparDados() {
     document.getElementById("altura").value = ""
     document.getElementById("peso").value = ""
-  }
+}

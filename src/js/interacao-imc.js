@@ -1,6 +1,4 @@
 // Declaração das variáveis
-let altura = document.getElementById("altura")
-let peso = document.getElementById("peso")
 let resultadoDoImc = document.getElementById("resultado-do-imc")
 let imagem = document.getElementById("imagem")
 let textoResultado = document.getElementById("texto-resultado")
@@ -8,16 +6,18 @@ let botaoCalcular = document.getElementById('botao-calcular')
 let botaoLimparDados = document.getElementById("botao-limpar-dados")
 
 function calcularImc(){
+        let altura = document.getElementById("altura").value
+        let peso = document.getElementById("peso").value
+
         if (altura.value == '' || peso.value == ''){
             alert("[ERRO] Você deve preencher os campos para poder prosseguir")
         } else {
-            altura = Number(altura.value)
-            peso = Number(peso.value)
+                imc = peso / (altura * altura )
+                textoResultado.style.marginTop = "60px"
 
-            let imc = peso / (altura * altura )
-    
-            textoResultado.style.marginTop = "60px"
-    
+                console.log(altura)
+                console.log(peso)
+                
         if (imc < 18.5){
                 textoResultado.style.color = "red"
                 textoResultado.classList.add("animacao")

@@ -9,16 +9,16 @@ function calcularImc(){
         let altura = document.getElementById("altura").value
         let peso = document.getElementById("peso").value
 
-        if (altura.value == '' || peso.value == ''){
+        if (altura == '' || peso == ''){
             alert("[ERRO] Você deve preencher os campos para poder prosseguir")
         } else {
                 imc = peso / (altura * altura )
                 textoResultado.style.marginTop = "60px"
-
-                console.log(altura)
-                console.log(peso)
-                
-        if (imc < 18.5){
+        if (imc < 2){
+                alert('[ERRO] Você deve preencher o campo que exige a altura com o uso de vírgula ou ponto, para que o cálculo seja feito corretamente')
+                textoResultado.style.marginTop = "0"
+        }
+        else if (imc < 18.5){
                 textoResultado.style.color = "red"
                 textoResultado.classList.add("animacao")
                 textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está ABAIXO DO PESO`

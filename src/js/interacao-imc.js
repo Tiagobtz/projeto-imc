@@ -15,7 +15,7 @@ function calcularImc(){
                 imc = peso / (altura * altura )
                 textoResultado.style.marginTop = "60px"
         if (imc < 2){
-                alert('[ERRO] Você deve preencher o campo que exige a altura com o uso de vírgula ou ponto, para que o cálculo seja feito corretamente')
+                alert('[ERRO] Você deve preencher o campo que solicita a altura com o uso de vírgula ou ponto, para que o cálculo seja feito corretamente')
                 textoResultado.style.marginTop = "0"
         }
         else if (imc < 18.5){

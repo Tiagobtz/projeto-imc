@@ -4,10 +4,26 @@ let imagem = document.getElementById("imagem")
 let textoResultado = document.getElementById("texto-resultado")
 let botaoCalcular = document.getElementById('botao-calcular')
 let botaoLimparDados = document.getElementById("botao-limpar-dados")
+let altura = document.getElementById("altura")
+let peso = document.getElementById("peso")
+
+altura.addEventListener('keypress', function(){
+                let alturaLength = altura.value.length
+                if (alturaLength === 1){
+                        altura.value += '.'
+                }
+})
+
+peso.addEventListener('keypress', function(){
+        let pesoLength = peso.value.length
+        if (pesoLength === 2){
+                peso.value += '.'
+        }
+})
 
 function calcularImc(){
-        let altura = document.getElementById("altura").value
-        let peso = document.getElementById("peso").value
+        let altura = document.getElementById('altura').value
+        let peso = document.getElementById('peso').value
 
         if (altura == '' || peso == ''){
             textoResultado.classList.remove("animacao")

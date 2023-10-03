@@ -21,6 +21,20 @@ peso.addEventListener('keypress', function(){
         }
 })
 
+altura.addEventListener('touchstart', function(){
+        let alturaLength = altura.value.length
+        if (alturaLength === 1){
+                altura.value += '.'
+        }
+})
+
+peso.addEventListener('touchstart', function(){
+let pesoLength = peso.value.length
+if (pesoLength === 2){
+        peso.value += '.'
+}
+})
+
 function calcularImc(){
         let altura = document.getElementById('altura').value
         let peso = document.getElementById('peso').value

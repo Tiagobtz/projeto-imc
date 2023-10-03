@@ -11,7 +11,7 @@ altura.addEventListener('keydown', function(event){
                 let alturaLength = altura.value.length
                 if (event.key === '.' || event.key === ','){
                         event.preventDefault()
-                } else if (event.key === 'Backspace') {
+                } else if (event.key === 'Backspace' || event.key === 'Delete') {
                         return
                 } else if (alturaLength === 1) {
                         altura.value += '.';
@@ -22,7 +22,7 @@ peso.addEventListener('keydown', function(event){
         let pesoLength = peso.value.length
         if (event.key === '.' || event.key === ','){
                 event.preventDefault()
-        } else if (event.key === 'Backspace') {
+        } else if (event.key === 'Backspace' || event.key === 'Delete') {
                 return
         } else if (pesoLength === 2) {
                 peso.value += '.';

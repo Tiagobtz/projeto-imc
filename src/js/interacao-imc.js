@@ -41,6 +41,13 @@ peso.addEventListener('input', function(event) {
         }
 })
 
+altura.addEventListener("blur", function(){
+        textoResultado.classList.remove("animacao")
+})
+
+peso.addEventListener("blur", function(){
+        textoResultado.classList.remove("animacao")
+})
 
 function calcularImc(){
         let altura = document.getElementById('altura').value
@@ -107,4 +114,7 @@ function limparDados() {
     document.getElementById("altura").value = ""
     document.getElementById("peso").value = ""
     textoResultado.classList.remove("animacao")
+    textoResultado.classList.add("animacao")
+    textoResultado.innerHTML = 'Preencha os campos com sua altura e peso corretamente e depois click no botão para ver o resultado do seu IMC.'
+    textoResultado.style.color = '#000'
 }

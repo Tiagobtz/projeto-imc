@@ -8,22 +8,18 @@ let altura = document.getElementById("altura")
 let peso = document.getElementById("peso")
 
 altura.addEventListener('keydown', function(event){
-                let alturaLength = altura.value.length
-                if (event.key === '.' || event.key === ','){
+        let alturaLength = altura.value.length
+        if (event.key === '.' || event.key === ','){
                         event.preventDefault()
-                } else if (event.key === 'Backspace') {
-                        return
-                } else if (alturaLength === 1) {
+        } else if (alturaLength === 1) {
                         altura.value += '.';
-                }
+        }
 })
 
 peso.addEventListener('keydown', function(event){
         let pesoLength = peso.value.length
         if (event.key === '.' || event.key === ','){
                 event.preventDefault()
-        } else if (event.key === 'Backspace') {
-                return
         } else if (pesoLength === 2) {
                 peso.value += '.';
         }
@@ -35,7 +31,15 @@ altura.addEventListener('input', function(event) {
             // Nesse caso, remova o último caractere do valor.
             altura.value = altura.value.slice(0, -1);
         }
-    })
+})
+
+peso.addEventListener('input', function(event) {
+        if (event.data === null && peso.value.length > 0) {
+            // O evento "input" foi acionado sem adição de dados (possivelmente pressionando o botão de apagar em um dispositivo móvel).
+            // Nesse caso, remova o último caractere do valor.
+            peso.value = peso.value.slice(0, -1);
+        }
+})
 
 
 function calcularImc(){

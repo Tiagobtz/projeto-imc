@@ -7,33 +7,20 @@ let botaoLimparDados = document.getElementById("botao-limpar-dados")
 let altura = document.getElementById("altura")
 let peso = document.getElementById("peso")
 
-altura.addEventListener('keypress', function(){
+altura.addEventListener('keydown', function(){
                 let alturaLength = altura.value.length
                 if (alturaLength === 1){
                         altura.value += '.'
                 }
 })
 
-peso.addEventListener('keypress', function(){
+peso.addEventListener('keydown', function(){
         let pesoLength = peso.value.length
         if (pesoLength === 2){
                 peso.value += '.'
         }
 })
 
-altura.addEventListener('touchstart', function(){
-        let alturaLength = altura.value.length
-        if (alturaLength === 1){
-                altura.value += '.'
-        }
-})
-
-peso.addEventListener('touchstart', function(){
-let pesoLength = peso.value.length
-if (pesoLength === 2){
-        peso.value += '.'
-}
-})
 
 function calcularImc(){
         let altura = document.getElementById('altura').value

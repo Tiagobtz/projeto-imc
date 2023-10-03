@@ -7,17 +7,25 @@ let botaoLimparDados = document.getElementById("botao-limpar-dados")
 let altura = document.getElementById("altura")
 let peso = document.getElementById("peso")
 
-altura.addEventListener('keydown', function(){
+altura.addEventListener('keydown', function(event){
                 let alturaLength = altura.value.length
-                if (alturaLength === 1){
-                        altura.value += '.'
+                if (event.key === '.' || event.key === ','){
+                        event.preventDefault()
+                } else if (event.key === 'Backspace') {
+                        return
+                } else if (alturaLength === 1) {
+                        altura.value += '.';
                 }
 })
 
-peso.addEventListener('keydown', function(){
+peso.addEventListener('keydown', function(event){
         let pesoLength = peso.value.length
-        if (pesoLength === 2){
-                peso.value += '.'
+        if (event.key === '.' || event.key === ','){
+                event.preventDefault()
+        } else if (event.key === 'Backspace') {
+                return
+        } else if (pesoLength === 2) {
+                peso.value += '.';
         }
 })
 
@@ -25,6 +33,14 @@ peso.addEventListener('keydown', function(){
 function calcularImc(){
         let altura = document.getElementById('altura').value
         let peso = document.getElementById('peso').value
+
+        if (altura !== Number || peso !== Number){
+            textoResultado.classList.remove("animacao")
+            textoResultado.innerHTML = `Ops, você deve preencher os campos apenas com valores numéricos!`
+            textoResultado.style.marginTop = "60px"
+            textoResultado.style.color = "red"
+            textoResultado.classList.add("animacao")
+        }
 
         if (altura == '' || peso == ''){
             textoResultado.classList.remove("animacao")

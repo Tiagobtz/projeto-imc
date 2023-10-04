@@ -10,18 +10,16 @@ let peso = document.getElementById("peso")
 altura.addEventListener('keydown', function(event){
         let alturaLength = altura.value.length
         if (event.key === '.' || event.key === ','){
-                        event.preventDefault()
+            event.preventDefault()
         } else if (alturaLength === 1) {
-                        altura.value += '.';
+            altura.value += '.'
         }
 })
 
 peso.addEventListener('keydown', function(event){
-        let pesoLength = peso.value.length
-        if (event.key === '.' || event.key === ','){
-                event.preventDefault()
-        } else if (pesoLength === 2) {
-                peso.value += '.';
+        if (event.key === ','){
+            event.preventDefault()
+            peso.value += '.'
         }
 })
 
@@ -64,13 +62,20 @@ function calcularImc(){
             textoResultado.style.color = "red"
             textoResultado.classList.add("animacao")
         } else {
+                
                 imc = peso / (altura * altura )
                 textoResultado.style.marginTop = "60px"
-        
-                if (imc < 10){
+
+                if (imc === Infinity){
                         textoResultado.classList.add("animacao")
-                        textoResultado.innerHTML = `Ops, confira se você digitou as informações corretamente!`
                         textoResultado.style.color = "red"
+                        textoResultado.innerHTML = `Você deve digitar um valor válido para poder prosseguir!`
+                        textoResultado.style.marginTop = "60px"
+                }
+                else if (imc < 5){
+                        textoResultado.classList.add("animacao")
+                        textoResultado.style.color = "red"
+                        textoResultado.innerHTML = `Seja mais coerente!`
                 }
                 else if (imc < 18.5){
                         textoResultado.classList.add("animacao")
@@ -113,4 +118,5 @@ function limparDados() {
     textoResultado.classList.add("animacao")
     textoResultado.innerHTML = 'Preencha os campos com sua altura e peso corretamente e depois click no botão para ver o resultado do seu IMC.'
     textoResultado.style.color = '#000'
+    textoResultado.style.marginTop = "60px"
 }

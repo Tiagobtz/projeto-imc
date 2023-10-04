@@ -16,10 +16,15 @@
         margin-top: 10px;
     }
 
+    .botoes {
+        width: 110px;
+        font-size: 10px;
+    }
+
     #confirmar-ou-limpar {
         display: flex;
     }
-    
+
     table {
         width: 300px;
         font-size: 8px;
@@ -31,6 +36,7 @@
 
     #resultado-do-imc {
         width: 320px;
+        margin-bottom: 50px;
     }
 
     #resultado-do-imc #texto-resultado {

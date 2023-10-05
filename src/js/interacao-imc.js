@@ -72,7 +72,7 @@ function calcularImc(){
                         textoResultado.innerHTML = `Você deve digitar um valor válido para poder prosseguir!`
                         textoResultado.style.marginTop = "60px"
                 }
-                else if (imc < 5){
+                else if (imc < 5 || imc > 120){
                         textoResultado.classList.add("animacao")
                         textoResultado.style.color = "red"
                         textoResultado.innerHTML = `Seja mais coerente, e preencha os campos de forma correta!`

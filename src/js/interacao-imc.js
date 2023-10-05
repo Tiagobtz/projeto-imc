@@ -48,12 +48,12 @@ function calcularImc(){
         let peso = document.getElementById('peso').value
 
         if (altura !== Number || peso !== Number){
-            textoResultado.classList.remove("animacao")
-            textoResultado.innerHTML = `Ops, você deve preencher os campos apenas com valores numéricos!`
-            textoResultado.style.marginTop = "60px"
-            textoResultado.style.color = "red"
-            textoResultado.classList.add("animacao")
-        }
+                textoResultado.classList.remove("animacao")
+                textoResultado.innerHTML = `Ops, você deve preencher os campos apenas com valores numéricos!`
+                textoResultado.style.marginTop = "60px"
+                textoResultado.style.color = "red"
+                textoResultado.classList.add("animacao")
+            }
 
         if (altura == '' || peso == ''){
             textoResultado.classList.remove("animacao")
@@ -75,14 +75,14 @@ function calcularImc(){
                 else if (imc < 5){
                         textoResultado.classList.add("animacao")
                         textoResultado.style.color = "red"
-                        textoResultado.innerHTML = `Seja mais coerente!`
+                        textoResultado.innerHTML = `Seja mais coerente, e preencha os campos de forma correta!`
                 }
                 else if (imc < 18.5){
                         textoResultado.classList.add("animacao")
                         textoResultado.style.color = "red"
                         textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está ABAIXO DO PESO`
                 }
-                else if (imc >= 18.5 && imc <= 24.9){
+                else if (imc >= 18.5 && imc <= 24.99){
                         textoResultado.classList.add("animacao")
                         textoResultado.style.color = "green"
                         textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com seu peso NORMAL`
@@ -114,9 +114,7 @@ function calcularImc(){
 function limparDados() {
     document.getElementById("altura").value = ""
     document.getElementById("peso").value = ""
-    textoResultado.classList.remove("animacao")
-    textoResultado.classList.add("animacao")
-    textoResultado.innerHTML = 'Preencha os campos com sua altura e peso corretamente e depois click no botão para ver o resultado do seu IMC.'
+    textoResultado.innerHTML = '- Preencha os campos com sua altura e peso corretamente e depois click no botão para ver o resultado do seu IMC.'
     textoResultado.style.color = '#000'
-    textoResultado.style.marginTop = "60px"
+    textoResultado.style.marginTop = "50px"
 }

@@ -98,11 +98,11 @@ body {
 }
 
 #botao-limpar-dados {
-    background-color: rgb(208, 57, 2);
+    background-color: rgb(178, 100, 16);
 }
 
 #botao-limpar-dados:hover {
-    background-color: rgb(249, 86, 27);
+    background-color: rgb(194, 57, 8);
 }
 
 #painel-da-tabela {

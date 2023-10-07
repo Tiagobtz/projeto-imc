@@ -6,6 +6,7 @@ let botaoCalcular = document.getElementById('botao-calcular')
 let botaoLimparDados = document.getElementById("botao-limpar-dados")
 let altura = document.getElementById("altura")
 let peso = document.getElementById("peso")
+let spans = document.querySelectorAll('.spans')
 
 altura.addEventListener('keydown', function(event){
         let alturaLength = altura.value.length
@@ -37,79 +38,91 @@ peso.addEventListener('input', function(event) {
 
 altura.addEventListener("blur", function(){
         textoResultado.classList.remove("animacao")
+        checarAltura()
 })
 
 peso.addEventListener("blur", function(){
         textoResultado.classList.remove("animacao")
+        checarPeso()
 })
 
 function calcularImc(){
         let altura = document.getElementById('altura').value
         let peso = document.getElementById('peso').value
 
-        if (altura !== Number || peso !== Number){
-                textoResultado.classList.remove("animacao")
-                textoResultado.innerHTML = `Ops, você deve preencher os campos apenas com valores numéricos!`
-                textoResultado.style.marginTop = "60px"
-                textoResultado.style.color = "red"
+        checarAltura()
+        checarPeso()
+
+        imc = peso / (altura * altura )
+        
+        if (imc === Infinity || imc <= 10){
                 textoResultado.classList.add("animacao")
-            }
+                textoResultado.style.color = "red"
+                textoResultado.innerHTML = `Ops, você deve ser mais coerente ao preencher os campos, pois dessa forma não irei conseguir calcular seu IMC!`
+                margin()
+        }
+        else if (imc < 18.5){
+                textoResultado.classList.add("animacao")
+                textoResultado.style.color = "red"
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está ABAIXO DO PESO`
+                margin()
+        }
+        else if (imc >= 18.5 && imc <= 24.99){
+                textoResultado.classList.add("animacao")
+                textoResultado.style.color = "green"
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com seu peso NORMAL`
+                margin()
+        }
+        else if (imc >= 25 && imc <= 29.9){
+                textoResultado.classList.add("animacao")
+                textoResultado.style.color = "red"
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com SOBREPESO`
+                margin()
+        }
+        else if (imc >= 30 && imc <= 34.9){
+                textoResultado.classList.add("animacao")
+                textoResultado.style.color = "red"
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE DE PRIMEIRO GRAU`
+                margin()
+        }
+        else if (imc >= 35 && imc <= 39.9){
+                textoResultado.classList.add("animacao")
+                textoResultado.style.color = "red"
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE DE SEGUNDO GRAU`
+                margin()
+        }
+        else if (imc > 40){
+                textoResultado.classList.add("animacao")
+                textoResultado.style.color = "red"
+                textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE GRAVE`
+                margin()
+        }
 
-        if (altura == '' || peso == ''){
-            textoResultado.classList.remove("animacao")
-            textoResultado.innerHTML = `Ops, você deve preencher os campos para poder prosseguir!`
-            textoResultado.style.marginTop = "60px"
-            textoResultado.style.color = "red"
-            textoResultado.classList.add("animacao")
+}
+
+function checarAltura(){
+        let altura = document.getElementById('altura').value
+        if (altura === ''){
+                spans[0].style.display = 'block'
+                spans[0].innerHTML = '*Campo obrigatório'
         } else {
-                
-                imc = peso / (altura * altura )
-                textoResultado.style.marginTop = "60px"
-
-                if (imc === Infinity){
-                        textoResultado.classList.add("animacao")
-                        textoResultado.style.color = "red"
-                        textoResultado.innerHTML = `Você deve digitar um valor válido para poder prosseguir!`
-                        textoResultado.style.marginTop = "60px"
-                }
-                else if (imc < 5 || imc > 120){
-                        textoResultado.classList.add("animacao")
-                        textoResultado.style.color = "red"
-                        textoResultado.innerHTML = `Seja mais coerente, e preencha os campos de forma correta!`
-                }
-                else if (imc < 18.5){
-                        textoResultado.classList.add("animacao")
-                        textoResultado.style.color = "red"
-                        textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está ABAIXO DO PESO`
-                }
-                else if (imc >= 18.5 && imc <= 24.99){
-                        textoResultado.classList.add("animacao")
-                        textoResultado.style.color = "green"
-                        textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com seu peso NORMAL`
-                }
-                else if (imc >= 25 && imc <= 29.9){
-                        textoResultado.classList.add("animacao")
-                        textoResultado.style.color = "red"
-                        textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com SOBREPESO`
-                }
-                else if (imc >= 30 && imc <= 34.9){
-                        textoResultado.classList.add("animacao")
-                        textoResultado.style.color = "red"
-                        textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE DE PRIMEIRO GRAU`
-                }
-                else if (imc >= 35 && imc <= 39.9){
-                        textoResultado.classList.add("animacao")
-                        textoResultado.style.color = "red"
-                        textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE DE SEGUNDO GRAU`
-                }
-                else if (imc > 40){
-                        textoResultado.classList.add("animacao")
-                        textoResultado.style.color = "red"
-                        textoResultado.innerHTML = `O resultado do cálculo do seu IMC é de ${imc.toFixed(2)} você está com OBESIDADE GRAVE`
-                }
+                spans[0].style.display = 'none'
         }
 }
 
+function checarPeso(){
+        let peso = document.getElementById('peso').value
+        if (peso === ''){
+                spans[1].style.display = 'block'
+                spans[1].innerHTML = '*Campo obrigatório'
+        } else {
+                spans[1].style.display = 'none'
+        }
+}
+
+function margin(){
+        textoResultado.style.marginTop = "50px"
+}
 
 function limparDados() {
     document.getElementById("altura").value = ""

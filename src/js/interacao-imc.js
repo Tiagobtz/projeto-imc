@@ -13,7 +13,7 @@ altura.addEventListener('keydown', function(event){
         if (event.key === '.' || event.key === ','){
             event.preventDefault()
         } else if (alturaLength === 1) {
-            altura.value += '.'
+             altura.value += '.'
         }
 })
 
